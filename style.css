@@ -2,22 +2,36 @@
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  scroll-behavior: smooth;
 }
 
 body {
   font-family: Arial, sans-serif;
-  background: linear-gradient(180deg, #0f0f0f, #1a1a1a);
+  background: linear-gradient(-45deg, #0f0f0f, #1a1a1a, #111, #191919);
+  background-size: 400% 400%;
+  animation: gradientBG 10s ease infinite;
   color: white;
+  overflow-x: hidden;
+}
+
+/* Animated Background */
+@keyframes gradientBG {
+  0% {background-position: 0% 50%;}
+  50% {background-position: 100% 50%;}
+  100% {background-position: 0% 50%;}
 }
 
 /* NAVBAR */
-
 .navbar {
   display: flex;
   justify-content: space-between;
-  align-items: center;
   padding: 20px 40px;
-  background: #111;
+  background: rgba(0,0,0,0.5);
+  backdrop-filter: blur(8px);
+}
+
+.logo {
+  font-size: 22px;
 }
 
 .nav-links a {
@@ -32,7 +46,6 @@ body {
 }
 
 /* HERO */
-
 .hero {
   text-align: center;
   padding: 120px 20px;
@@ -49,7 +62,6 @@ body {
 }
 
 /* BUTTONS */
-
 .btn {
   padding: 12px 25px;
   border-radius: 8px;
@@ -61,6 +73,7 @@ body {
 .primary {
   background: #5865F2;
   color: white;
+  box-shadow: 0 0 10px #5865F2;
 }
 
 .secondary {
@@ -70,21 +83,20 @@ body {
 
 .btn:hover {
   transform: scale(1.1);
+  box-shadow: 0 0 20px #5865F2;
 }
 
-/* SECTION */
-
+/* SECTIONS */
 .section {
   padding: 80px 40px;
   text-align: center;
 }
 
 .dark {
-  background: #181818;
+  background: rgba(0,0,0,0.4);
 }
 
 /* CARDS */
-
 .card-container {
   display: flex;
   flex-wrap: wrap;
@@ -94,7 +106,7 @@ body {
 }
 
 .card {
-  background: #1f1f1f;
+  background: rgba(30,30,30,0.9);
   padding: 20px;
   width: 250px;
   border-radius: 12px;
@@ -102,12 +114,11 @@ body {
 }
 
 .card:hover {
-  transform: translateY(-8px);
-  background: #252525;
+  transform: translateY(-10px);
+  box-shadow: 0 0 20px #5865F2;
 }
 
-/* COMMANDS */
-
+/* COMMAND GRID */
 .command-grid {
   display: flex;
   flex-wrap: wrap;
@@ -120,12 +131,32 @@ body {
   background: #1f1f1f;
   padding: 10px 20px;
   border-radius: 8px;
+  transition: 0.3s;
+}
+
+.command-grid span:hover {
+  box-shadow: 0 0 15px #5865F2;
+}
+
+/* STATUS */
+.status-box {
+  margin-top: 30px;
+  font-size: 18px;
+}
+
+.status-dot {
+  height: 12px;
+  width: 12px;
+  background-color: #00ff88;
+  border-radius: 50%;
+  display: inline-block;
+  margin-right: 10px;
+  box-shadow: 0 0 10px #00ff88;
 }
 
 /* FOOTER */
-
 footer {
-  background: #111;
+  background: rgba(0,0,0,0.6);
   text-align: center;
   padding: 20px;
   color: #777;
